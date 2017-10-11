@@ -1,0 +1,10 @@
+Hello new!</br>
+<!-- form_with be sure to use local:true or it is preping you for JS ajax calls -->
+<% if @post.errors.any? %>
+We have some sort of error: <%= @post.errors.full_messages.to_sentence %></br>
+<% end %>
+<%= form_with model: @post, local: true do |form| %>
+  <%= form.text_field :title %></br>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,27 @@
+<!-- This is a erb file, it's html and ruby. -->
+Hello World! Hello Matias!
+</br>
+How is rails so magical? M a g i c!
+</br>
+Mostly meta programming at the core (sorry to ruin the magic)
+</br>
+Lets take the outside in approach.
+</br>
+Write what you want to see, then let the errors guide you.
+Rails uses instance vars to pass in information.
+Heres the thing the outside in approuch, it might be better to take it step by step for learning.
+So let's go to routes.</br>
+How you write erb is with < % <%= @posts %> % > without the spaces. Check the code.
+</br>
+</br>
+<!--
+rails gernerate migration
+rails db:migrate
+-->
+<% @posts.each do |post| %>
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+<pre> Created at: <%= post.created_at %> </pre>
+<pre> Updated at: <%= post.updated_at %> </pre>
+<%= link_to "delete", post, method: :delete, local: true %>
+<% end %>
